@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct DevTimeHack_MI_HS_EM_iOSApp: App {
+    @StateObject var store = createRootStore()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
+                .environmentObject(store)
         }
     }
 }
