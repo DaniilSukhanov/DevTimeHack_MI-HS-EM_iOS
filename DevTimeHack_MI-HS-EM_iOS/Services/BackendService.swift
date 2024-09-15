@@ -10,6 +10,18 @@ import OSLog
 
 @globalActor
 actor BackendService {
+    static let shared = BackendService()
+    let baseURL = "http://127.0.0.1:8000"
+    private let logger = Logger(subsystem: "BackendService", category: "Networking")
+    private let keychein = KeychainManager.shared
+    
+    private let dateFormatter = {
+        var formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        return formatter
+    }()
+    private let jsonDecoder = JSONDecoder()
+    
     func createTask(title: String, attendantID: Int, description: String?, taskStatus: TaskStatus?, taskImportance: TaskImportance?, xp: Int?, reminder: Date?) async throws {
         var deadline: String? = nil
         if let reminder {
@@ -30,18 +42,6 @@ actor BackendService {
             headers: [:].addToken(try keychein.getToken())
         )
     }
-    
-    static let shared = BackendService()
-    let baseURL = "http://127.0.0.1:8000"
-    private let logger = Logger(subsystem: "BackendService", category: "Networking")
-    private let keychein = KeychainManager.shared
-    
-    private let dateFormatter = {
-        var formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm"
-        return formatter
-    }()
-    private let jsonDecoder = JSONDecoder()
     
     func registrationUser(username: String, email: String, password: String, repeatPassword: String) async throws {
         logger.debug("registration user")
