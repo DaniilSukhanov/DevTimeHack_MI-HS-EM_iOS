@@ -9,4 +9,6 @@ import Foundation
 
 struct RootState: StateProtocol {
     var registrationState = RegistrationState()
+    var loginState = LoginState()
+    var isLogin = false
 }

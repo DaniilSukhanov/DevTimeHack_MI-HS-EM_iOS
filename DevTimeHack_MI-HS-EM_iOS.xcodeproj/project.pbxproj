@@ -8,17 +8,75 @@
 
 /* Begin PBXBuildFile section */
 		E42A13722C9640A8000FA651 /* DevTimeHack_MI_HS_EM_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42A13712C9640A8000FA651 /* DevTimeHack_MI_HS_EM_iOSApp.swift */; };
-		E42A13742C9640A8000FA651 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42A13732C9640A8000FA651 /* ContentView.swift */; };
 		E42A13762C9640AB000FA651 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E42A13752C9640AB000FA651 /* Assets.xcassets */; };
 		E42A13792C9640AB000FA651 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E42A13782C9640AB000FA651 /* Preview Assets.xcassets */; };
+		E42A13992C96413C000FA651 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42A137F2C96413C000FA651 /* Action.swift */; };
+		E42A139A2C96413C000FA651 /* Middleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42A13802C96413C000FA651 /* Middleware.swift */; };
+		E42A139B2C96413C000FA651 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42A13812C96413C000FA651 /* Reducer.swift */; };
+		E42A139C2C96413C000FA651 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42A13822C96413C000FA651 /* State.swift */; };
+		E42A139D2C96413C000FA651 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42A13832C96413C000FA651 /* Store.swift */; };
+		E42A139E2C96413C000FA651 /* createRootStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42A13852C96413C000FA651 /* createRootStore.swift */; };
+		E42A139F2C96413C000FA651 /* String+sendRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42A13862C96413C000FA651 /* String+sendRequest.swift */; };
+		E42A13A02C96413C000FA651 /* BackendService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42A13882C96413C000FA651 /* BackendService.swift */; };
+		E42A13A12C96413C000FA651 /* NetworkingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42A13892C96413C000FA651 /* NetworkingProtocol.swift */; };
+		E42A13A32C96413C000FA651 /* RegistrationAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42A138C2C96413C000FA651 /* RegistrationAction.swift */; };
+		E42A13A42C96413C000FA651 /* RegistrationMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42A138D2C96413C000FA651 /* RegistrationMiddleware.swift */; };
+		E42A13A52C96413C000FA651 /* RegistrationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42A138E2C96413C000FA651 /* RegistrationReducer.swift */; };
+		E42A13A62C96413C000FA651 /* RegistrationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42A138F2C96413C000FA651 /* RegistrationState.swift */; };
+		E42A13A72C96413C000FA651 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42A13902C96413C000FA651 /* RegistrationView.swift */; };
+		E42A13A82C96413C000FA651 /* RootAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42A13922C96413C000FA651 /* RootAction.swift */; };
+		E42A13A92C96413C000FA651 /* RootMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42A13932C96413C000FA651 /* RootMiddleware.swift */; };
+		E42A13AA2C96413C000FA651 /* RootReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42A13942C96413C000FA651 /* RootReducer.swift */; };
+		E42A13AB2C96413C000FA651 /* RootState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42A13952C96413C000FA651 /* RootState.swift */; };
+		E42A13AC2C96413C000FA651 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42A13962C96413C000FA651 /* RootView.swift */; };
+		E46BE0C42C96F7E700E9EF9D /* AppImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BE0C32C96F7E700E9EF9D /* AppImage.swift */; };
+		E46BE0C62C96F7FA00E9EF9D /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BE0C52C96F7FA00E9EF9D /* AppColor.swift */; };
+		E46BE0C92C96F88F00E9EF9D /* Color+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BE0C72C96F88F00E9EF9D /* Color+hex.swift */; };
+		E46BE0CA2C96F88F00E9EF9D /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BE0C82C96F88F00E9EF9D /* UIColor+hex.swift */; };
+		E46BE0CC2C96FA9F00E9EF9D /* InputFiled.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BE0CB2C96FA9F00E9EF9D /* InputFiled.swift */; };
+		E46BE0CE2C970E5100E9EF9D /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BE0CD2C970E5100E9EF9D /* TokenManager.swift */; };
+		E46BE0D12C971A4500E9EF9D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BE0D02C971A4500E9EF9D /* LoginView.swift */; };
+		E46BE0D32C971A6400E9EF9D /* LoginReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BE0D22C971A6400E9EF9D /* LoginReducer.swift */; };
+		E46BE0D52C971A7300E9EF9D /* LoginMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BE0D42C971A7300E9EF9D /* LoginMiddleware.swift */; };
+		E46BE0D72C971A7A00E9EF9D /* LoginState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BE0D62C971A7A00E9EF9D /* LoginState.swift */; };
+		E46BE0D92C971A8100E9EF9D /* LoginAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BE0D82C971A8100E9EF9D /* LoginAction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E42A136E2C9640A8000FA651 /* DevTimeHack_MI-HS-EM_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DevTimeHack_MI-HS-EM_iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E42A13712C9640A8000FA651 /* DevTimeHack_MI_HS_EM_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevTimeHack_MI_HS_EM_iOSApp.swift; sourceTree = "<group>"; };
-		E42A13732C9640A8000FA651 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E42A13752C9640AB000FA651 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E42A13782C9640AB000FA651 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E42A137F2C96413C000FA651 /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		E42A13802C96413C000FA651 /* Middleware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Middleware.swift; sourceTree = "<group>"; };
+		E42A13812C96413C000FA651 /* Reducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
+		E42A13822C96413C000FA651 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		E42A13832C96413C000FA651 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		E42A13852C96413C000FA651 /* createRootStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = createRootStore.swift; sourceTree = "<group>"; };
+		E42A13862C96413C000FA651 /* String+sendRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+sendRequest.swift"; sourceTree = "<group>"; };
+		E42A13882C96413C000FA651 /* BackendService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackendService.swift; sourceTree = "<group>"; };
+		E42A13892C96413C000FA651 /* NetworkingProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingProtocol.swift; sourceTree = "<group>"; };
+		E42A138C2C96413C000FA651 /* RegistrationAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationAction.swift; sourceTree = "<group>"; };
+		E42A138D2C96413C000FA651 /* RegistrationMiddleware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationMiddleware.swift; sourceTree = "<group>"; };
+		E42A138E2C96413C000FA651 /* RegistrationReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationReducer.swift; sourceTree = "<group>"; };
+		E42A138F2C96413C000FA651 /* RegistrationState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationState.swift; sourceTree = "<group>"; };
+		E42A13902C96413C000FA651 /* RegistrationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		E42A13922C96413C000FA651 /* RootAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootAction.swift; sourceTree = "<group>"; };
+		E42A13932C96413C000FA651 /* RootMiddleware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootMiddleware.swift; sourceTree = "<group>"; };
+		E42A13942C96413C000FA651 /* RootReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootReducer.swift; sourceTree = "<group>"; };
+		E42A13952C96413C000FA651 /* RootState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootState.swift; sourceTree = "<group>"; };
+		E42A13962C96413C000FA651 /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		E46BE0C32C96F7E700E9EF9D /* AppImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImage.swift; sourceTree = "<group>"; };
+		E46BE0C52C96F7FA00E9EF9D /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		E46BE0C72C96F88F00E9EF9D /* Color+hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+hex.swift"; sourceTree = "<group>"; };
+		E46BE0C82C96F88F00E9EF9D /* UIColor+hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
+		E46BE0CB2C96FA9F00E9EF9D /* InputFiled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFiled.swift; sourceTree = "<group>"; };
+		E46BE0CD2C970E5100E9EF9D /* TokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
+		E46BE0D02C971A4500E9EF9D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		E46BE0D22C971A6400E9EF9D /* LoginReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginReducer.swift; sourceTree = "<group>"; };
+		E46BE0D42C971A7300E9EF9D /* LoginMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMiddleware.swift; sourceTree = "<group>"; };
+		E46BE0D62C971A7A00E9EF9D /* LoginState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginState.swift; sourceTree = "<group>"; };
+		E46BE0D82C971A8100E9EF9D /* LoginAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +109,11 @@
 		E42A13702C9640A8000FA651 /* DevTimeHack_MI-HS-EM_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				E42A13842C96413C000FA651 /* BaseArchitecture */,
+				E42A13982C96413C000FA651 /* Componets */,
+				E42A13872C96413C000FA651 /* Other */,
+				E42A138A2C96413C000FA651 /* Services */,
 				E42A13712C9640A8000FA651 /* DevTimeHack_MI_HS_EM_iOSApp.swift */,
-				E42A13732C9640A8000FA651 /* ContentView.swift */,
 				E42A13752C9640AB000FA651 /* Assets.xcassets */,
 				E42A13772C9640AB000FA651 /* Preview Content */,
 			);
@@ -65,6 +126,96 @@
 				E42A13782C9640AB000FA651 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E42A13842C96413C000FA651 /* BaseArchitecture */ = {
+			isa = PBXGroup;
+			children = (
+				E42A137F2C96413C000FA651 /* Action.swift */,
+				E42A13802C96413C000FA651 /* Middleware.swift */,
+				E42A13812C96413C000FA651 /* Reducer.swift */,
+				E42A13822C96413C000FA651 /* State.swift */,
+				E42A13832C96413C000FA651 /* Store.swift */,
+			);
+			path = BaseArchitecture;
+			sourceTree = "<group>";
+		};
+		E42A13872C96413C000FA651 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				E46BE0C72C96F88F00E9EF9D /* Color+hex.swift */,
+				E46BE0C82C96F88F00E9EF9D /* UIColor+hex.swift */,
+				E42A13852C96413C000FA651 /* createRootStore.swift */,
+				E42A13862C96413C000FA651 /* String+sendRequest.swift */,
+				E46BE0C32C96F7E700E9EF9D /* AppImage.swift */,
+				E46BE0C52C96F7FA00E9EF9D /* AppColor.swift */,
+				E46BE0CD2C970E5100E9EF9D /* TokenManager.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		E42A138A2C96413C000FA651 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E42A13882C96413C000FA651 /* BackendService.swift */,
+				E42A13892C96413C000FA651 /* NetworkingProtocol.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E42A13912C96413C000FA651 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				E42A138C2C96413C000FA651 /* RegistrationAction.swift */,
+				E42A138D2C96413C000FA651 /* RegistrationMiddleware.swift */,
+				E42A138E2C96413C000FA651 /* RegistrationReducer.swift */,
+				E42A138F2C96413C000FA651 /* RegistrationState.swift */,
+				E42A13902C96413C000FA651 /* RegistrationView.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		E42A13972C96413C000FA651 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				E42A13922C96413C000FA651 /* RootAction.swift */,
+				E42A13932C96413C000FA651 /* RootMiddleware.swift */,
+				E42A13942C96413C000FA651 /* RootReducer.swift */,
+				E42A13952C96413C000FA651 /* RootState.swift */,
+				E42A13962C96413C000FA651 /* RootView.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		E42A13982C96413C000FA651 /* Componets */ = {
+			isa = PBXGroup;
+			children = (
+				E46BE0CF2C971A3300E9EF9D /* Login */,
+				E46BE0C22C96F54900E9EF9D /* Other */,
+				E42A13912C96413C000FA651 /* Registration */,
+				E42A13972C96413C000FA651 /* Root */,
+			);
+			path = Componets;
+			sourceTree = "<group>";
+		};
+		E46BE0C22C96F54900E9EF9D /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				E46BE0CB2C96FA9F00E9EF9D /* InputFiled.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		E46BE0CF2C971A3300E9EF9D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				E46BE0D02C971A4500E9EF9D /* LoginView.swift */,
+				E46BE0D22C971A6400E9EF9D /* LoginReducer.swift */,
+				E46BE0D42C971A7300E9EF9D /* LoginMiddleware.swift */,
+				E46BE0D62C971A7A00E9EF9D /* LoginState.swift */,
+				E46BE0D82C971A8100E9EF9D /* LoginAction.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +288,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E42A13742C9640A8000FA651 /* ContentView.swift in Sources */,
+				E42A13A52C96413C000FA651 /* RegistrationReducer.swift in Sources */,
+				E42A139D2C96413C000FA651 /* Store.swift in Sources */,
+				E42A13AA2C96413C000FA651 /* RootReducer.swift in Sources */,
+				E46BE0CC2C96FA9F00E9EF9D /* InputFiled.swift in Sources */,
+				E42A13A92C96413C000FA651 /* RootMiddleware.swift in Sources */,
+				E42A13AB2C96413C000FA651 /* RootState.swift in Sources */,
+				E42A139F2C96413C000FA651 /* String+sendRequest.swift in Sources */,
+				E42A139A2C96413C000FA651 /* Middleware.swift in Sources */,
+				E42A13A72C96413C000FA651 /* RegistrationView.swift in Sources */,
+				E42A13A32C96413C000FA651 /* RegistrationAction.swift in Sources */,
+				E46BE0D52C971A7300E9EF9D /* LoginMiddleware.swift in Sources */,
+				E46BE0CA2C96F88F00E9EF9D /* UIColor+hex.swift in Sources */,
+				E46BE0C62C96F7FA00E9EF9D /* AppColor.swift in Sources */,
+				E42A13AC2C96413C000FA651 /* RootView.swift in Sources */,
+				E42A13A82C96413C000FA651 /* RootAction.swift in Sources */,
+				E42A13A02C96413C000FA651 /* BackendService.swift in Sources */,
+				E42A13992C96413C000FA651 /* Action.swift in Sources */,
+				E46BE0D32C971A6400E9EF9D /* LoginReducer.swift in Sources */,
+				E42A139B2C96413C000FA651 /* Reducer.swift in Sources */,
+				E46BE0C42C96F7E700E9EF9D /* AppImage.swift in Sources */,
+				E46BE0C92C96F88F00E9EF9D /* Color+hex.swift in Sources */,
+				E42A13A12C96413C000FA651 /* NetworkingProtocol.swift in Sources */,
+				E42A139E2C96413C000FA651 /* createRootStore.swift in Sources */,
+				E46BE0D12C971A4500E9EF9D /* LoginView.swift in Sources */,
+				E46BE0CE2C970E5100E9EF9D /* TokenManager.swift in Sources */,
+				E46BE0D92C971A8100E9EF9D /* LoginAction.swift in Sources */,
+				E46BE0D72C971A7A00E9EF9D /* LoginState.swift in Sources */,
+				E42A13A42C96413C000FA651 /* RegistrationMiddleware.swift in Sources */,
 				E42A13722C9640A8000FA651 /* DevTimeHack_MI_HS_EM_iOSApp.swift in Sources */,
+				E42A13A62C96413C000FA651 /* RegistrationState.swift in Sources */,
+				E42A139C2C96413C000FA651 /* State.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

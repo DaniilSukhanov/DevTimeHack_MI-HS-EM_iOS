@@ -15,6 +15,7 @@ struct DevTimeHack_MI_HS_EM_iOSApp: App {
         WindowGroup {
             RootView()
                 .environmentObject(store)
+                .environment(\.colorScheme, .light)
         }
     }
 }

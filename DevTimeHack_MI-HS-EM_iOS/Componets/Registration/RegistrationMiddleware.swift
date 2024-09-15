@@ -8,28 +8,26 @@
 import Foundation
 
 func registrationMiddleware(
-    service: BackendServiceProtocol = BackendService.shared
+    service: BackendServiceProtocol = BackendService.shared,
+    keychain: KeychainManagerProtocol = KeychainManager.shared
 ) -> Middleware<RegistrationState, RegistrationAction> {
     
     return { state, action in
         switch action {
         case .send(let username, let email, let password, let repeatPassword):
             do {
-                try? await service.registrationUser(
+                try await service.registrationUser(
                     username: username, email: email,
                     password: password, repeatPassword: repeatPassword
                 )
                 let token = try await service.loginUser(login: username, password: password)
-                return .setToken(token)
+                try keychain.saveToken(token)
+                return .successfully
             } catch {
-                print(String(describing: error))
-                return nil
+                return .setError(error.localizedDescription)
             }
         default:
             return nil
         }
     }
 }
-// 123D&d93
-// R21@gdds.com
-// Test1

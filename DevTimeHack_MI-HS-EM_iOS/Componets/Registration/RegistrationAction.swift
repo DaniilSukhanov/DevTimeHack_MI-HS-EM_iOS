@@ -9,5 +9,6 @@ import Foundation
 
 enum RegistrationAction: ActionProtocol {
     case send(username: String, email: String, password: String, repeatPassword: String)
-    case setToken(String)
+    case successfully
+    case setError(String)
 }

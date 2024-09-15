@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import OSLog
 
 protocol BackendServiceProtocol: NetworkingProtocol {
     func registrationUser(username: String, email: String, password: String, repeatPassword: String) async throws
@@ -16,8 +17,10 @@ protocol BackendServiceProtocol: NetworkingProtocol {
 actor BackendService: BackendServiceProtocol {
     static let shared = BackendService()
     let baseURL = "http://127.0.0.1:8000"
+    private let logger = Logger(subsystem: "BackendService", category: "Networking")
     
     func registrationUser(username: String, email: String, password: String, repeatPassword: String) async throws {
+        logger.debug("registration user")
         let queryItems = [
             URLQueryItem(name: "username", value: username),
             URLQueryItem(name: "email", value: email),
@@ -28,11 +31,7 @@ actor BackendService: BackendServiceProtocol {
     }
     
     func loginUser(login: String, password: String) async throws -> String {
-        let queryItems = [
-            URLQueryItem(name: "username", value: login),
-            URLQueryItem(name: "password", value: password),
-            URLQueryItem(name: "grant_type", value: "password")
-        ]
+        logger.debug("login user")
         let (data, _) = try await "\(baseURL)/auth/login".sendRequest(
             typeMethod: .post,
             headers: [

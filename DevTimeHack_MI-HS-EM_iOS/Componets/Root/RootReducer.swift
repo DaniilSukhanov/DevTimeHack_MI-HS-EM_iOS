@@ -11,5 +11,7 @@ import Foundation
     switch action {
     case .registration(let action):
         registrationReducer(&state.registrationState, action)
+    case .login(let action):
+        loginReducer(&state.loginState, action)
     }
 }
