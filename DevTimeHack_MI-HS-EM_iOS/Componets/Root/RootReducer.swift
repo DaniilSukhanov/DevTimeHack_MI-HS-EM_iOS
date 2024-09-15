@@ -13,6 +13,10 @@ import Foundation
         registrationReducer(&state.registrationState, action)
     case .login(let action):
         loginReducer(&state.loginState, action)
+    case .user(let action):
+        userReducer(&state.userState, action)
+    case .editorTask(let action):
+        editorTaskReducer(&state.editortask, action)
     case .setUser(let user):
         state.user = user
         state.isLogin = true

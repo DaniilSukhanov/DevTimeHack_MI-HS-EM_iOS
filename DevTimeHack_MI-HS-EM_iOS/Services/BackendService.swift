@@ -45,13 +45,13 @@ actor BackendService {
     
     func registrationUser(username: String, email: String, password: String, repeatPassword: String) async throws {
         logger.debug("registration user")
-        let queryItems = [
-            URLQueryItem(name: "username", value: username),
-            URLQueryItem(name: "email", value: email),
-            URLQueryItem(name: "password", value: password),
-            URLQueryItem(name: "repeat_password", value: repeatPassword)
-        ]
-        try await "\(baseURL)/auth/register".sendRequest(typeMethod: .post, parameters: queryItems)
+        try await "\(baseURL)/auth/register".sendRequest(
+            typeMethod: .post,
+            headers: [
+                "Content-Type": "application/x-www-form-urlencoded",
+            ],
+            body: "username=\(username)&password=\(password)&email=\(email)&repeat_password=\(repeatPassword)".data(using: .utf8, allowLossyConversion: true)
+        )
     }
     
     func loginUser(login: String, password: String) async throws -> String {
@@ -63,13 +63,7 @@ actor BackendService {
             ],
             body: "username=\(login)&password=\(password)".data(using: .utf8, allowLossyConversion: true)
         )
-        guard let json = try JSONSerialization.jsonObject(with: data) as? [String: String] else {
-            throw BackendServiceError.badFormatJSON
-        }
-        guard let token = json["access_token"] else {
-            throw BackendServiceError.badFormatJSON
-        }
-        return token
+        return try BackendService.unpackToken(data: data)
     }
     
     func getPersonalsTasks(page: Int, limit: Int?, status: TaskStatus?, importance: TaskImportance?) async throws -> BSTasks {
@@ -109,8 +103,13 @@ actor BackendService {
     }
     
     func getUser() async throws -> BSCurrentUser {
-        let (data, _) = try await "".sendRequest(headers: [:].addToken(try keychein.getToken()))
+        let (data, _) = try await "\(baseURL)/users/whoami".sendRequest(headers: [:].addToken(try keychein.getToken()))
         return try jsonDecoder.decode(BSCurrentUser.self, from: data)
+    }
+    
+    func updateToken() async throws -> String {
+        let (data, _) = try await "\(baseURL)/auth/update_token".sendRequest(typeMethod: .post, headers: [:].addToken(try keychein.getToken()))
+        return try BackendService.unpackToken(data: data)
     }
 }
 
@@ -131,9 +130,12 @@ extension BackendService {
 }
 
 fileprivate extension BackendService {
-    static func unpackToken(_ token: String?) throws -> String {
-        guard let token else {
-            throw BackendServiceError.badToken
+    static func unpackToken(data: Data) throws -> String {
+        guard let json = try JSONSerialization.jsonObject(with: data) as? [String: String] else {
+            throw BackendServiceError.badFormatJSON
+        }
+        guard let token = json["access_token"] else {
+            throw BackendServiceError.badFormatJSON
         }
         return token
     }

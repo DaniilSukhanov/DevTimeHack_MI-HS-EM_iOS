@@ -9,7 +9,7 @@ import Foundation
 
 enum EditorTaskAction: ActionProtocol {
     case editTask(taskID: Int?)
-    case createTask(name: String, deadline: Date, text: String)
-    case updateTask(name: String, deadline: Date, text: String)
+    case createTask(name: String, attendantID: Int, deadline: Date, text: String)
+    case updateTask(taskID: Int, name: String, attendantID: Int, deadline: Date, text: String)
     case successfully
 }

@@ -31,6 +31,7 @@ struct EditorTaskView: View {
     private enum Focus {
         case textEditor
     }
+    @EnvironmentObject var store: RootStore
     @State private var orientation: UIInterfaceOrientation = .unknown
     @State private var nameTask = ""
     @State private var deadline: Date = .now
@@ -46,7 +47,7 @@ struct EditorTaskView: View {
                 InputRow("Deadline") {
                     DatePicker("", selection: $deadline)
                 }
-                TextEditorResizingView(text: $textTask, orientation: .portrait, minHeightPortrait: 120, minHeightLandscape: 120)
+                TextEditorResizingView(text: $textTask, orientation: .portrait, minHeightPortrait: 120, minHeightLandscape: 200)
                     .scrollContentBackground(.hidden)
                     .scrollDisabled(true)
                     .background {
@@ -70,6 +71,20 @@ struct EditorTaskView: View {
             }
         }.onTapGesture {
             focus = .none
+        }.toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button("Ready") {
+                    if let taskID = store.state.editortask.taskID {
+                        store.dispatch(
+                            .editorTask(
+                                .updateTask(taskID: taskID, name: nameTask, attendantID: store.state.user?.id ?? 0, deadline: deadline, text: textTask)
+                            )
+                        )
+                    } else {
+                        store.dispatch(.editorTask(.createTask(name: nameTask, attendantID: store.state.user?.id ?? 0, deadline: deadline, text: textTask)))
+                    }
+                }
+            }
         }
     }
 }

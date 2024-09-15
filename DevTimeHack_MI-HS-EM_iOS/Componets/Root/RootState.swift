@@ -10,6 +10,8 @@ import Foundation
 struct RootState: StateProtocol {
     var registrationState = RegistrationState()
     var loginState = LoginState()
+    var userState = UserState()
+    var editortask = EditorTaskState()
     var isLogin = false
     var user: BSCurrentUser?
 }

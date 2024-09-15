@@ -34,7 +34,7 @@ struct LoginView: View {
             
             if !login.isEmpty && !password.isEmpty {
                 Button(action: {
-                    
+                    store.dispatch(.login(.send(login: login, password: password)))
                 }) {
                     RoundedRectangle(cornerRadius: 25.0)
                         .fill(state.error == nil ? AppColor.first : AppColor.error)

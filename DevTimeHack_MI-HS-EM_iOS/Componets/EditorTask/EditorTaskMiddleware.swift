@@ -13,10 +13,10 @@ func editorTaskMiddleware(
 ) -> Middleware<EditorTaskState, EditorTaskAction> {
     return { state, action in
         switch action {
-        case .createTask(name: let name, deadline: let deadline, text: let text):
+        case .createTask(name: let name, attendantID: let attendantID, deadline: let deadline, text: let text):
             do {
                 try await service.createTask(
-                    title: name, attendantID: 0, description: text,
+                    title: name, attendantID: attendantID, description: text,
                     taskStatus: nil, taskImportance: nil, xp: nil, reminder: deadline
                 )
                 return .successfully
@@ -24,9 +24,9 @@ func editorTaskMiddleware(
                 print(error)
                 return nil
             }
-        case .updateTask(name: let name, deadline: let deadline, text: let text):
+        case .updateTask(taskID: let taskID, name: let name, attendantID: let attendantID, deadline: let deadline, text: let text):
             do {
-                try await service.updateTask(taskID: 0, title: name, description: text, attendantID: 0, taskStatus: nil, taskImportance: nil, xp: nil, reminder: deadline)
+                try await service.updateTask(taskID: taskID, title: name, description: text, attendantID: attendantID, taskStatus: nil, taskImportance: nil, xp: nil, reminder: deadline)
                 return .successfully
             } catch {
                 print(error)

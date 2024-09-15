@@ -16,6 +16,9 @@ struct DevTimeHack_MI_HS_EM_iOSApp: App {
             RootView()
                 .environmentObject(store)
                 .environment(\.colorScheme, .light)
+                .onAppear {
+                    store.dispatch(.user(.startCheckingUser))
+                }
         }
     }
 }

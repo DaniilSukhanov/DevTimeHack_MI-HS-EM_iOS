@@ -10,6 +10,8 @@ import Foundation
 enum RootAction: ActionProtocol {
     case registration(RegistrationAction)
     case login(LoginAction)
+    case editorTask(EditorTaskAction)
+    case user(UserAction)
     case getUser
     case setUser(BSCurrentUser)
 }
