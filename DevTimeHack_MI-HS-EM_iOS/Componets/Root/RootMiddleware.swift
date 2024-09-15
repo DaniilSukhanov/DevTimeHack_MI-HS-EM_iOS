@@ -10,6 +10,8 @@ import Foundation
 func rootMiddleware() -> Middleware<RootState, RootAction> {
     let registrationMiddleware = registrationMiddleware()
     let loginMiddleware = loginMiddleware()
+    let keychain = KeychainManager.shared
+    let service = BackendService.shared
     return { state, action in
         switch action {
         case .registration(let action):
@@ -22,6 +24,17 @@ func rootMiddleware() -> Middleware<RootState, RootAction> {
                 return nil
             }
             return .login(newAction)
+        case .getUser:
+            do {
+                let user = try await service.getUser()
+                return .setUser(user)
+            } catch {
+                print(error)
+                return nil
+            }
+        default:
+            break
         }
+        return nil
     }
 }

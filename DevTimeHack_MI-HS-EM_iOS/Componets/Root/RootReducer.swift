@@ -13,5 +13,10 @@ import Foundation
         registrationReducer(&state.registrationState, action)
     case .login(let action):
         loginReducer(&state.loginState, action)
+    case .setUser(let user):
+        state.user = user
+        state.isLogin = true
+    default:
+        break
     }
 }

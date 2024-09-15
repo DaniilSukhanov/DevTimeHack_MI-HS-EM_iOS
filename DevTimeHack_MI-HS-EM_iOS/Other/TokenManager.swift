@@ -7,9 +7,9 @@
 
 import Foundation
 
-protocol KeychainManagerProtocol {
-    func getToken() throws -> String
-    func saveToken(_ token: String) throws
+protocol KeychainManagerProtocol: Actor {
+    func getToken() async throws -> String
+    func saveToken(_ token: String) async throws
 }
 
 enum KeychainError : Error {
@@ -17,7 +17,7 @@ enum KeychainError : Error {
     case badToken
 }
 
-final class KeychainManager: KeychainManagerProtocol {
+actor KeychainManager: KeychainManagerProtocol {
     static let shared = KeychainManager()
     
     func getToken() throws -> String {

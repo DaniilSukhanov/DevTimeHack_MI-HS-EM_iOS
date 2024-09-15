@@ -28,27 +28,27 @@ struct RootView: View {
                 Text("deadlines")
                     .tabItem {
                         AppImage.fire
-                        Text("deadlines")
+                        Text("Deadlines")
                     }.tag(CurrentView.deadlines)
                 Text("groups")
                     .tabItem {
-                        AppImage.fire
-                        Text("deadlines")
+                        AppImage.groups
+                        Text("Groups")
                     }.tag(CurrentView.groups)
-                Text("New task")
+                EditorTaskView()
                     .tabItem {
-                        AppImage.fire
-                        Text("deadlines")
+                        AppImage.newTask
+                        Text("New task")
                     }.tag(CurrentView.newTask)
                 Text("analytics")
                     .tabItem {
-                        AppImage.fire
-                        Text("deadlines")
+                        AppImage.analytics
+                        Text("Analytics")
                     }.tag(CurrentView.analytics)
                 Text("profile")
                     .tabItem {
-                        AppImage.fire
-                        Text("deadlines")
+                        AppImage.profile
+                        Text("Profile")
                     }.tag(CurrentView.profle)
             }.tint(selectedView == .deadlines ? AppColor.error : nil)
         }

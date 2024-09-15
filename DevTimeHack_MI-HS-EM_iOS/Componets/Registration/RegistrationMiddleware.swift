@@ -8,7 +8,7 @@
 import Foundation
 
 func registrationMiddleware(
-    service: BackendServiceProtocol = BackendService.shared,
+    service: BackendService = BackendService.shared,
     keychain: KeychainManagerProtocol = KeychainManager.shared
 ) -> Middleware<RegistrationState, RegistrationAction> {
     
@@ -21,7 +21,7 @@ func registrationMiddleware(
                     password: password, repeatPassword: repeatPassword
                 )
                 let token = try await service.loginUser(login: username, password: password)
-                try keychain.saveToken(token)
+                try await keychain.saveToken(token)
                 return .successfully
             } catch {
                 return .setError(error.localizedDescription)

@@ -40,6 +40,15 @@
 		E46BE0D52C971A7300E9EF9D /* LoginMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BE0D42C971A7300E9EF9D /* LoginMiddleware.swift */; };
 		E46BE0D72C971A7A00E9EF9D /* LoginState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BE0D62C971A7A00E9EF9D /* LoginState.swift */; };
 		E46BE0D92C971A8100E9EF9D /* LoginAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BE0D82C971A8100E9EF9D /* LoginAction.swift */; };
+		E46BE0DC2C97258700E9EF9D /* EditorTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BE0DB2C97258700E9EF9D /* EditorTaskView.swift */; };
+		E46BE0DE2C97259E00E9EF9D /* EditorTaskState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BE0DD2C97259E00E9EF9D /* EditorTaskState.swift */; };
+		E46BE0E02C9725A600E9EF9D /* EditorTaskAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BE0DF2C9725A600E9EF9D /* EditorTaskAction.swift */; };
+		E46BE0E22C9725CB00E9EF9D /* EditorTaskMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BE0E12C9725CB00E9EF9D /* EditorTaskMiddleware.swift */; };
+		E46BE0E42C9725D700E9EF9D /* EditorTaskReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BE0E32C9725D700E9EF9D /* EditorTaskReducer.swift */; };
+		E46BE0E62C972CDD00E9EF9D /* TextEditorResizingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BE0E52C972CDD00E9EF9D /* TextEditorResizingView.swift */; };
+		E46BE0E82C9748C500E9EF9D /* BackendService+Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BE0E72C9748C500E9EF9D /* BackendService+Tasks.swift */; };
+		E46BE0EA2C974E9300E9EF9D /* BackendServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46BE0E92C974E9300E9EF9D /* BackendServiceProtocol.swift */; };
+		E4A4F40D2C975E220057F08E /* BSCurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A4F40C2C975E220057F08E /* BSCurrentUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +86,15 @@
 		E46BE0D42C971A7300E9EF9D /* LoginMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMiddleware.swift; sourceTree = "<group>"; };
 		E46BE0D62C971A7A00E9EF9D /* LoginState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginState.swift; sourceTree = "<group>"; };
 		E46BE0D82C971A8100E9EF9D /* LoginAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAction.swift; sourceTree = "<group>"; };
+		E46BE0DB2C97258700E9EF9D /* EditorTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorTaskView.swift; sourceTree = "<group>"; };
+		E46BE0DD2C97259E00E9EF9D /* EditorTaskState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorTaskState.swift; sourceTree = "<group>"; };
+		E46BE0DF2C9725A600E9EF9D /* EditorTaskAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorTaskAction.swift; sourceTree = "<group>"; };
+		E46BE0E12C9725CB00E9EF9D /* EditorTaskMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorTaskMiddleware.swift; sourceTree = "<group>"; };
+		E46BE0E32C9725D700E9EF9D /* EditorTaskReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorTaskReducer.swift; sourceTree = "<group>"; };
+		E46BE0E52C972CDD00E9EF9D /* TextEditorResizingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditorResizingView.swift; sourceTree = "<group>"; };
+		E46BE0E72C9748C500E9EF9D /* BackendService+Tasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BackendService+Tasks.swift"; sourceTree = "<group>"; };
+		E46BE0E92C974E9300E9EF9D /* BackendServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendServiceProtocol.swift; sourceTree = "<group>"; };
+		E4A4F40C2C975E220057F08E /* BSCurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSCurrentUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +177,9 @@
 			children = (
 				E42A13882C96413C000FA651 /* BackendService.swift */,
 				E42A13892C96413C000FA651 /* NetworkingProtocol.swift */,
+				E46BE0E72C9748C500E9EF9D /* BackendService+Tasks.swift */,
+				E46BE0E92C974E9300E9EF9D /* BackendServiceProtocol.swift */,
+				E4A4F40C2C975E220057F08E /* BSCurrentUser.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -190,6 +211,7 @@
 		E42A13982C96413C000FA651 /* Componets */ = {
 			isa = PBXGroup;
 			children = (
+				E46BE0DA2C97255300E9EF9D /* EditorTask */,
 				E46BE0CF2C971A3300E9EF9D /* Login */,
 				E46BE0C22C96F54900E9EF9D /* Other */,
 				E42A13912C96413C000FA651 /* Registration */,
@@ -202,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				E46BE0CB2C96FA9F00E9EF9D /* InputFiled.swift */,
+				E46BE0E52C972CDD00E9EF9D /* TextEditorResizingView.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -216,6 +239,18 @@
 				E46BE0D82C971A8100E9EF9D /* LoginAction.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		E46BE0DA2C97255300E9EF9D /* EditorTask */ = {
+			isa = PBXGroup;
+			children = (
+				E46BE0DB2C97258700E9EF9D /* EditorTaskView.swift */,
+				E46BE0DD2C97259E00E9EF9D /* EditorTaskState.swift */,
+				E46BE0DF2C9725A600E9EF9D /* EditorTaskAction.swift */,
+				E46BE0E12C9725CB00E9EF9D /* EditorTaskMiddleware.swift */,
+				E46BE0E32C9725D700E9EF9D /* EditorTaskReducer.swift */,
+			);
+			path = EditorTask;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,25 +327,34 @@
 				E42A139D2C96413C000FA651 /* Store.swift in Sources */,
 				E42A13AA2C96413C000FA651 /* RootReducer.swift in Sources */,
 				E46BE0CC2C96FA9F00E9EF9D /* InputFiled.swift in Sources */,
+				E46BE0DC2C97258700E9EF9D /* EditorTaskView.swift in Sources */,
 				E42A13A92C96413C000FA651 /* RootMiddleware.swift in Sources */,
 				E42A13AB2C96413C000FA651 /* RootState.swift in Sources */,
 				E42A139F2C96413C000FA651 /* String+sendRequest.swift in Sources */,
 				E42A139A2C96413C000FA651 /* Middleware.swift in Sources */,
+				E46BE0E22C9725CB00E9EF9D /* EditorTaskMiddleware.swift in Sources */,
 				E42A13A72C96413C000FA651 /* RegistrationView.swift in Sources */,
+				E46BE0E62C972CDD00E9EF9D /* TextEditorResizingView.swift in Sources */,
 				E42A13A32C96413C000FA651 /* RegistrationAction.swift in Sources */,
 				E46BE0D52C971A7300E9EF9D /* LoginMiddleware.swift in Sources */,
 				E46BE0CA2C96F88F00E9EF9D /* UIColor+hex.swift in Sources */,
+				E46BE0E02C9725A600E9EF9D /* EditorTaskAction.swift in Sources */,
 				E46BE0C62C96F7FA00E9EF9D /* AppColor.swift in Sources */,
 				E42A13AC2C96413C000FA651 /* RootView.swift in Sources */,
 				E42A13A82C96413C000FA651 /* RootAction.swift in Sources */,
 				E42A13A02C96413C000FA651 /* BackendService.swift in Sources */,
 				E42A13992C96413C000FA651 /* Action.swift in Sources */,
+				E46BE0DE2C97259E00E9EF9D /* EditorTaskState.swift in Sources */,
 				E46BE0D32C971A6400E9EF9D /* LoginReducer.swift in Sources */,
 				E42A139B2C96413C000FA651 /* Reducer.swift in Sources */,
 				E46BE0C42C96F7E700E9EF9D /* AppImage.swift in Sources */,
 				E46BE0C92C96F88F00E9EF9D /* Color+hex.swift in Sources */,
 				E42A13A12C96413C000FA651 /* NetworkingProtocol.swift in Sources */,
+				E46BE0E42C9725D700E9EF9D /* EditorTaskReducer.swift in Sources */,
+				E46BE0EA2C974E9300E9EF9D /* BackendServiceProtocol.swift in Sources */,
+				E4A4F40D2C975E220057F08E /* BSCurrentUser.swift in Sources */,
 				E42A139E2C96413C000FA651 /* createRootStore.swift in Sources */,
+				E46BE0E82C9748C500E9EF9D /* BackendService+Tasks.swift in Sources */,
 				E46BE0D12C971A4500E9EF9D /* LoginView.swift in Sources */,
 				E46BE0CE2C970E5100E9EF9D /* TokenManager.swift in Sources */,
 				E46BE0D92C971A8100E9EF9D /* LoginAction.swift in Sources */,
@@ -468,6 +512,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "HSE.DevTimeHack-MI-HS-EM-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -497,6 +542,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "HSE.DevTimeHack-MI-HS-EM-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -8,7 +8,7 @@
 import Foundation
 
 func loginMiddleware(
-    service: BackendServiceProtocol = BackendService.shared,
+    service: BackendService = BackendService.shared,
     keychain: KeychainManagerProtocol = KeychainManager.shared
 ) -> Middleware<LoginState, LoginAction> {
     return { state, action in
@@ -16,7 +16,7 @@ func loginMiddleware(
         case .send(login: let login, password: let password):
             do {
                 let token = try await service.loginUser(login: login, password: password)
-                try keychain.saveToken(token)
+                try await keychain.saveToken(token)
             } catch {
                 return .setError(error.localizedDescription)
             }
